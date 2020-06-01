@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Keypads from "./Keypads";
 import Result from "./Result";
-
+import "./calculator.css";
 export default ({ initialValue }) => {
- const [result, setResult] = useState("");
+ const [result, setResult] = useState(initialValue);
 
  const handleClick = (button) => {
   switch (button) {
    case "=":
     calculate();
     break;
-   case "C":
+   case "AC":
     reset();
     break;
    case "CE":
@@ -24,7 +24,9 @@ export default ({ initialValue }) => {
 
  const calculate = () => {
   try {
-   setResult((eval(result) || "") + "");
+   setResult(
+    (eval(result) % 1 != 0 ? eval(result).toFixed(2) : eval(result) || "") + ""
+   );
   } catch (err) {
    setResult("Error");
   }
@@ -39,12 +41,9 @@ export default ({ initialValue }) => {
  };
 
  return (
-  <div>
-   <div className="calculator-body">
-    <h1>Calculator</h1>
-    <Result result={result} />
-    <Keypads onClick={handleClick} />
-   </div>
+  <div className="calculator-body">
+   <Result result={result} />
+   <Keypads onClick={handleClick} />
   </div>
  );
 };

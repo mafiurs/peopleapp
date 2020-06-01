@@ -1,10 +1,10 @@
 import React from "react";
 import Calculator from "./Calculator";
-
+import "./main.css";
 function App() {
  return (
-  <div className="App">
-   <Calculator initialValue="123" />
+  <div className="calculator-container">
+   <Calculator initialValue="" />
   </div>
  );
 }
