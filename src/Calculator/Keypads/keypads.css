@@ -1,47 +1,46 @@
-
-.keypad-body{
+.keypad-body {
     margin-top: 0;
     display: grid;
     grid-template-columns: repeat(4, 5rem);
     grid-auto-rows: 4rem;
     justify-content: center;
-    color: #fff;
-    
+    font-size: 1rem;
 }
 
-.keypad__default-key{
-    background-color: rgb(46, 46, 46);
-    border:none;
-    color: #fff;
-    font-size: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+.keypad__default-key {
+    background-color: #2e2e2e;
+    border: 1px solid #0000000d;
+    color: inherit;
+    font-size: inherit;
+}
+
+.keypad__default-key:focus {
+    outline: none;
 }
 
 .keypad__default-key:hover,
-.keypad__default-key:active
-{
-    background-color: rgb(33, 33, 33);
+.keypad__default-key:active {
+    background-color: #212121;
 }
 
-.keypad__equal-key{
+.keypad__equal-key {
     grid-column: 4/5;
     grid-row: 2/6;
-    color: #fff;
-    background: rgb(1, 134, 69);
-    border:none;
+    background: #018645;
+    border: none;
 }
-.keypad__equal-key:hover{
-    background: rgb(1, 109, 56);
+.keypad__equal-key:hover {
+    background: #016d38;
 }
-.keypad__ac-key{
-    color: #fff;
-    background: rgb(192, 68, 68);  
-    border:none;
+.keypad__ac-key {
+    background: #c04444;
+    border: none;
 }
-.keypad__ac-key:hover{
-    background:  rgb(175, 59, 59);  
+.keypad__ac-key:hover,
+.keypad__ac-key:active {
+    background: #af3b3b;
 }
 
-.keypad__operator-key{
-    color:rgb(197, 131, 13);
+.keypad__operator-key {
+    color: #c5830d;
 }
